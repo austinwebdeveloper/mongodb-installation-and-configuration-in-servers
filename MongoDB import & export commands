@@ -1,0 +1,51 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+************************* Mongodb commands in windows*******************************
+
+// One collection export
+mongoexport -d nueve -c users --out C:\db\users.json
+
+// One collection import
+
+mongoexport -d nueve -c users C:\db\users.json
+
+
+// Database export
+mongodump -d nueve -o C:\db\nueve
+
+
+// Database restore
+mongorestore -d pets C:\db\nueve\nueve
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+************************* Mongodb commands in Atlas examples for windows*******************************
+
+// windows shell connection(atlas database)
+mongo "mongodb://cluster0-shard-00-00-8rics.mongodb.net:27017,cluster0-shard-00-01-8rics.mongodb.net:27017,cluster0-shard-00-02-8rics.mongodb.net:27017/test?replicaSet=Cluster0-shard-0" --ssl --authenticationDatabase admin --username windows --password BrdjOdx6Rjw4UHO0
+
+
+// Dumping windows db(atlas database)
+mongodump --host Cluster0-shard-0/cluster0-shard-00-00-8rics.mongodb.net:27017,cluster0-shard-00-01-8rics.mongodb.net:27017,cluster0-shard-00-02-8rics.mongodb.net:27017 --ssl --username windows --password BrdjOdx6Rjw4UHO0 --authenticationDatabase admin --db test -o C:\db\
+
+
+// restore windows db test to new db testrestore(atlas database)
+
+mongorestore --host Cluster0-shard-0/cluster0-shard-00-00-8rics.mongodb.net:27017,cluster0-shard-00-01-8rics.mongodb.net:27017,cluster0-shard-00-02-8rics.mongodb.net:27017 --ssl --username windows --password BrdjOdx6Rjw4UHO0 --authenticationDatabase admin --db testrestore C:\db\test
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+************************* Mongodb commands in Ubuntu examples*******************************
+
+// Mongodb export collection in ubuntu:
+sudo mongoexport --db mystro -c users --out newdbexport.json
+
+// MongoDB Import collection in ubuntu:
+sudo mongoimport --db newdb --collection restaurants --file newdbexport.json
+
+// Database dump in ubuntu:
+sudo mongodump -d mystro -o db
+
+// Database restore/import in ubuntu:
+sudo mongorestore -d pets db\db\mystro
+
+//from local file restore command(windows command propmt)
+mongorestore --host 35.168.122.251:27017 --authenticationDatabase admin --db windows C:\db\test
