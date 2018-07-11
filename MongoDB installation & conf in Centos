@@ -1,0 +1,44 @@
+Step #1: Add the MongoDB Repository
+
+1. create file for downloading and installing mongodb
+
+    vi /etc/yum.repos.d/mongodb-org.repo
+	
+2. Add  following code and save the file
+ 
+	[mongodb-org-3.6]
+	name=MongoDB Repository
+	baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
+	gpgcheck=1
+	enabled=1
+	gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+
+
+Step #2: Install MongoDB
+
+ 1. yum update
+ 
+ 2. yum install mongodb-org
+ 
+Step #3: Give remote access
+ 
+   Edit mongod.conf file in  etc
+   
+   vi /etc/mongod.conf
+   Change the line bindIp 127.0.0.1 to bindIp 0.0.0.0 and add bindIpAll: true 
+		  
+Step #4 Start MongoDB Services
+            sudo systemctl start mongod
+
+Step #5 Check the MongoDB Status
+            sudo systemctl status mongod
+ 
+ 
+ If it is AWS hosting please make sure 27017 port open to all interfaces.
+ 
+ if not do following--
+ 
+1. Go to your EC2 dashboard: https://console.aws.amazon.com/ec2/
+2. Go to Instances and scroll down to see your instance’s Security Groups. Eg, it will be something like launch-wizard-4
+3. Go to Netword & Security -> Security Groups -> Inbound tab -> Edit button.
+4. Make a new Custom TCP on port 27017, Source: Anywhere, 0.0.0.0/0
