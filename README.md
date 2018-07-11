@@ -6,7 +6,7 @@ Installation and configuration in ubuntu server
 
 Installation and configuration in centos server
 
-# Remote Access settingss for 27017 port
+# Remote Access settings for 27017 port AWS
 1. Go to your EC2 dashboard: https://console.aws.amazon.com/ec2/
 2. Go to Instances and scroll down to see your instance’s Security Groups. Eg, it will be something like launch-wizard-4
 3. Go to Netword & Security -> Security Groups -> Inbound tab -> Edit button.
