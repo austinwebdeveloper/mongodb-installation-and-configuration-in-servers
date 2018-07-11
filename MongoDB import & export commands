@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-************************* Mongodb commands in windows*******************************
+************************* Mongodb import and export commands in windows*******************************
 
 // One collection export
 mongoexport -d nueve -c users --out C:\db\users.json
@@ -17,7 +17,7 @@ mongodump -d nueve -o C:\db\nueve
 mongorestore -d pets C:\db\nueve\nueve
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-************************* Mongodb commands in Atlas examples for windows*******************************
+************************* Mongodb import and export commands in Atlas examples for windows-pice-estimator******************************
 
 // windows shell connection(atlas database)
 mongo "mongodb://cluster0-shard-00-00-8rics.mongodb.net:27017,cluster0-shard-00-01-8rics.mongodb.net:27017,cluster0-shard-00-02-8rics.mongodb.net:27017/test?replicaSet=Cluster0-shard-0" --ssl --authenticationDatabase admin --username windows --password BrdjOdx6Rjw4UHO0
@@ -33,7 +33,7 @@ mongorestore --host Cluster0-shard-0/cluster0-shard-00-00-8rics.mongodb.net:2701
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-************************* Mongodb commands in Ubuntu examples*******************************
+************************* Mongodb import and export commands in Ubuntu examples*******************************
 
 // Mongodb export collection in ubuntu:
 sudo mongoexport --db mystro -c users --out newdbexport.json
