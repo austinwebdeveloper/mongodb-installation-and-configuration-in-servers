@@ -1,0 +1,38 @@
+Step #1 Add MongoDB Repository
+         sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+         
+		 echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+         sudo apt-get update
+
+Step #2 Install MongoDB
+         sudo apt-get install -y mongodb-org		 
+		 
+Step #3 Configure MongoDB
+     1. Create a file 
+	     sudo nano /etc/systemd/system/mongodb.service
+     2. Add the following line into the file
+
+    	 [Unit]
+		 Description=High-performance, schema-free document-oriented database
+		 After=network.target
+
+		 [Service]
+		 User=mongodb
+		 ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
+
+		 [Install]
+		 WantedBy=multi-user.target
+
+     3. Start MongoDB
+	     sudo systemctl start mongodb
+	 4. Get status of mongodb
+	      systemctl status mongodb
+     5. Allow remote access
+          Run command nano /etc/mongodb.conf  and change the line bindIp 127.0.0.1 to bindIp 0.0.0.0
+		  
+Step #4 Start MongoDB Services
+            sudo systemctl start mongodb
+
+Step #6 Check the MongoDB Status
+            sudo systemctl status mongodb
