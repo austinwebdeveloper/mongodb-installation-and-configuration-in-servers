@@ -31,6 +31,16 @@ mongodump --host Cluster0-shard-0/cluster0-shard-00-00-8rics.mongodb.net:27017,c
 
 mongorestore --host Cluster0-shard-0/cluster0-shard-00-00-8rics.mongodb.net:27017,cluster0-shard-00-01-8rics.mongodb.net:27017,cluster0-shard-00-02-8rics.mongodb.net:27017 --ssl --username windows --password BrdjOdx6Rjw4UHO0 --authenticationDatabase admin --db testrestore C:\db\test
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+************************* Mongodb import and export commands in Atlas examples for shamel******************************
+Mongo shell access:
+mongo "mongodb://cluster0-shard-00-00-rsfxs.mongodb.net:27017,cluster0-shard-00-01-rsfxs.mongodb.net:27017,cluster0-shard-00-02-rsfxs.mongodb.net:27017/test?replicaSet=Cluster0-shard-0" --ssl --authenticationDatabase admin --username shamel --password ZO6HrYYwGNX5WsBR
+
+// Dumping windows db(atlas database)
+mongodump --host cluster0-shard-00-00-rsfxs.mongodb.net:27017,cluster0-shard-00-01-rsfxs.mongodb.net:27017,cluster0-shard-00-02-rsfxs.mongodb.net:27017  --ssl --authenticationDatabase admin --username shamel --password ZO6HrYYwGNX5WsBR --db shamelinccom -o Documents/shamelinccom
+
+// Mongo restore:
+mongorestore --host  cluster0-shard-00-00-rsfxs.mongodb.net:27017,cluster0-shard-00-01-rsfxs.mongodb.net:27017,cluster0-shard-00-02-rsfxs.mongodb.net:27017  --ssl --authenticationDatabase admin --username shamel --password ZO6HrYYwGNX5WsBR --db shamelinccom Documents/shamelinccom
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ************************* Mongodb import and export commands in Ubuntu examples*******************************
